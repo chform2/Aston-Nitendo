@@ -1,0 +1,351 @@
+/*
+  _____  ______ ______ _____ _   _ _____ _______ _____ ____  _   _  _____ 
+ |  __ \|  ____|  ____|_   _| \ | |_   _|__   __|_   _/ __ \| \ | |/ ____|
+ | |  | | |__  | |__    | | |  \| | | |    | |    | || |  | |  \| | (___  
+ | |  | |  __| |  __|   | | | . ` | | |    | |    | || |  | | . ` |\___ \ 
+ | |__| | |____| |     _| |_| |\  |_| |_   | |   _| || |__| | |\  |____) |
+ |_____/|______|_|    |_____|_| \_|_____|  |_|  |_____\____/|_| \_|_____/ 
+                                                                          
+                                                                          
+*/
+:root{
+    --font-size: 12px;
+    --color:#000;
+    --bg-primary:#E60012;
+    --bg-primary-hover:#D10000;
+    --bg-body:#F4F4F4;
+    --navbar-height:50px;
+}
+@font-face{
+    font-family:CaviarLight;
+    src:url(../fonts/CaviarDreams.ttf);
+}
+@font-face{
+    font-family:CaviarMedium;
+    src:url(../fonts/CaviarDreams_Bold.ttf);
+}
+
+@font-face{
+    font-family:FontAwesome;
+    src: url("../fonts/fa-solid-900.eot");
+    src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+/* DEFAULT FONT FAMILY*/
+body,input,button,textarea,div{
+    font-family: CaviarLight;
+    font-size:var(--font-size);
+    color:var(--text);
+    background-color: var(--bg-body);
+}
+
+/*
+   _____ ______ _   _ ______ _____            _      
+  / ____|  ____| \ | |  ____|  __ \     /\   | |     
+ | |  __| |__  |  \| | |__  | |__) |   /  \  | |     
+ | | |_ |  __| | . ` |  __| |  _  /   / /\ \ | |     
+ | |__| | |____| |\  | |____| | \ \  / ____ \| |____ 
+  \_____|______|_| \_|______|_|  \_\/_/    \_\______|
+                                                                                                    
+*/
+html, body, *{
+    margin:0px;
+    padding:0px;
+}
+/*SCROLLBARS*/
+::-webkit-scrollbar {
+    margin:0px;
+    height: 6px;
+    width: 6px;
+    background: #d4d4d4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius:1ex;
+    -moz-border-radius:1ex;
+    -o-border-radius:1ex;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+
+/*
+   _____ _    _  _____ _______ ____  __  __  _____     _____ _                _____ _____ ______  _____ 
+  / ____| |  | |/ ____|__   __/ __ \|  \/  |/ ____|   / ____| |        /\    / ____/ ____|  ____|/ ____|
+ | |    | |  | | (___    | | | |  | | \  / | (___    | |    | |       /  \  | (___| (___ | |__  | (___  
+ | |    | |  | |\___ \   | | | |  | | |\/| |\___ \   | |    | |      / /\ \  \___ \\___ \|  __|  \___ \ 
+ | |____| |__| |____) |  | | | |__| | |  | |____) |  | |____| |____ / ____ \ ____) |___) | |____ ____) |
+  \_____|\____/|_____/   |_|  \____/|_|  |_|_____/    \_____|______/_/    \_\_____/_____/|______|_____/ 
+                                                                                                        
+                                                                                                        
+*/
+
+/* GENERAL */
+.txt-center{
+    text-align:center;
+}
+.txt-right{
+    text-align:right;
+}
+.txt-left{
+    text-align: left;
+}
+.txt-disabled{
+    color:var(--disabled);
+}
+.float-left{
+    float:left;
+}
+.float-right{
+    float:right;
+}
+.uppercase{
+    text-transform:uppercase;
+}
+.capitale{
+    text-transform:capitalize;
+}
+.bold{
+    font-weight:bold;
+}
+.italic{
+    font-style: italic;
+}
+.w100{
+    width:100vw;
+}
+
+
+/*
+  _   _     __      ______          _____  
+ | \ | |   /\ \    / /  _ \   /\   |  __ \ 
+ |  \| |  /  \ \  / /| |_) | /  \  | |__) |
+ | . ` | / /\ \ \/ / |  _ < / /\ \ |  _  / 
+ | |\  |/ ____ \  /  | |_) / ____ \| | \ \ 
+ |_| \_/_/    \_\/   |____/_/    \_\_|  \_\
+                                           
+                                           
+*/
+/* général */
+nav, header{
+    background-color:var(--bg-primary);
+    color:#fff;
+    font-size:30px;
+}
+/* header */
+header{
+    position:fixed;
+    top:0px;
+    left:0px;
+    right: 0px;
+    width: 100%;
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header img.logo{
+    height:30px;
+}
+header p{
+    padding:10px 20px 10px 10px;
+}
+header p i + i{
+    margin-left:20px;
+}
+div.content{
+    position: fixed;
+    top:var(--navbar-height);
+    height: 100%;
+    width:auto;
+    display: flex;
+    flex-direction: row;
+}
+div.content > nav, div.content > aside{
+    display: flex;
+    flex-direction: row;
+}
+/* nav */
+nav{
+    max-width: 90px;
+    height: 100%;
+    overflow: auto;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+nav::-webkit-scrollbar{
+    width:0px;
+}
+nav p.btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    word-break: break-word;
+    text-align: center;
+    padding:15px;
+    width: 100%;
+    transition: all 250ms ease-in-out;
+    background-color: var(--bg-primary);
+    cursor: pointer;
+}
+nav p.btn:hover{
+    background-color: var(--bg-primary-hover);
+}
+nav span{
+    font-size:12px !important;
+}
+/*
+            _____ _____ _____  ______ 
+     /\    / ____|_   _|  __ \|  ____|
+    /  \  | (___   | | | |  | | |__   
+   / /\ \  \___ \  | | | |  | |  __|  
+  / ____ \ ____) |_| |_| |__| | |____ 
+ /_/    \_\_____/|_____|_____/|______|
+                                      
+                                      
+*/
+aside.content{
+    position: relative;
+    top:0px;
+    left:0px;
+    right:0px;
+    width: 100%;
+    width: calc(50vh-90px);
+    padding: 5px;  
+    overflow: auto;
+}
+aside.content .col1, aside.content .col2{
+    padding:5px;
+    overflow: auto;
+}
+aside.content .col1{
+    width: 70%;
+}
+aside.content .col2{
+    width:30%;
+    margin-bottom:var(--navbar-height);
+}
+aside.content .col2 .card{
+    padding:10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+aside.content .col2 .card h1{
+    font-size:16px;
+}
+aside.content .col2 .card .infos{
+    padding:5px;
+    background-color: #fff;
+}
+aside.content .card + .card{
+    border-top:10px solid var(--bg-body);
+}
+aside.content .col2 .card img{
+    width: 85px;
+}
+aside.content .col2 .card .disabled{
+    font-size:small;
+    color:gray;
+}
+/* gallerie */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 8px; 
+}
+figure span.titre{
+    padding:5px;
+    background-color:rgba(0, 0, 0, 0.75);
+    color:#fff;
+}
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
+    cursor:pointer;
+    padding-top: 8px;
+    transition: all 500ms ease-in-out;
+}
+.gallery__img:hover{
+    padding-top:0px;
+}
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+  
+.gallery__item--2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+  
+.gallery__item--3 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+  
+.gallery__item--4 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+  
+.gallery__item--5 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+  
+.gallery__item--6 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+@media all and (max-width:1036px) {
+    div.content > aside{
+        display: block;
+    }
+    aside.content .col1, aside.content .col2{
+        width:100%;
+        height: 100%;
+    }
+    .gallery {
+        display: flex;
+        flex-direction: column;
+    }
+    .gallery figure + figure{
+        margin-top: 5px;
+    }
+}
+/*
+  ______ ____   ____ _______ ______ _____  
+ |  ____/ __ \ / __ \__   __|  ____|  __ \ 
+ | |__ | |  | | |  | | | |  | |__  | |__) |
+ |  __|| |  | | |  | | | |  |  __| |  _  / 
+ | |   | |__| | |__| | | |  | |____| | \ \ 
+ |_|    \____/ \____/  |_|  |______|_|  \_\
+                                           
+                                           
+*/
+
