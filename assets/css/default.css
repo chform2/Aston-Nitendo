@@ -71,54 +71,28 @@ html, body, *{
 ::-webkit-scrollbar-corner {
     background: #000;
 }
-
-
 /*
-   _____ _    _  _____ _______ ____  __  __  _____     _____ _                _____ _____ ______  _____ 
-  / ____| |  | |/ ____|__   __/ __ \|  \/  |/ ____|   / ____| |        /\    / ____/ ____|  ____|/ ____|
- | |    | |  | | (___    | | | |  | | \  / | (___    | |    | |       /  \  | (___| (___ | |__  | (___  
- | |    | |  | |\___ \   | | | |  | | |\/| |\___ \   | |    | |      / /\ \  \___ \\___ \|  __|  \___ \ 
- | |____| |__| |____) |  | | | |__| | |  | |____) |  | |____| |____ / ____ \ ____) |___) | |____ ____) |
-  \_____|\____/|_____/   |_|  \____/|_|  |_|_____/    \_____|______/_/    \_\_____/_____/|______|_____/ 
-                                                                                                        
-                                                                                                        
+  _____ _______      __    _____ ____  _   _ _______ ______ _   _ _______ 
+ |  __ \_   _\ \    / /   / ____/ __ \| \ | |__   __|  ____| \ | |__   __|
+ | |  | || |  \ \  / /   | |   | |  | |  \| |  | |  | |__  |  \| |  | |   
+ | |  | || |   \ \/ /    | |   | |  | | . ` |  | |  |  __| | . ` |  | |   
+ | |__| || |_   \  /     | |___| |__| | |\  |  | |  | |____| |\  |  | |   
+ |_____/_____|   \/       \_____\____/|_| \_|  |_|  |______|_| \_|  |_|                                                                           
+          
+ contain left navbar and the page content and widjets bar
 */
-
-/* GENERAL */
-.txt-center{
-    text-align:center;
+div.content{
+    position: fixed;
+    top:var(--navbar-height);
+    height: 100%;
+    width:auto;
+    display: flex;
+    flex-direction: row;
 }
-.txt-right{
-    text-align:right;
+div.content > nav, div.content > aside{
+    display: flex;
+    flex-direction: row;
 }
-.txt-left{
-    text-align: left;
-}
-.txt-disabled{
-    color:var(--disabled);
-}
-.float-left{
-    float:left;
-}
-.float-right{
-    float:right;
-}
-.uppercase{
-    text-transform:uppercase;
-}
-.capitale{
-    text-transform:capitalize;
-}
-.bold{
-    font-weight:bold;
-}
-.italic{
-    font-style: italic;
-}
-.w100{
-    width:100vw;
-}
-
 
 /*
   _   _     __      ______          _____  
@@ -128,9 +102,16 @@ html, body, *{
  | |\  |/ ____ \  /  | |_) / ____ \| | \ \ 
  |_| \_/_/    \_\/   |____/_/    \_\_|  \_\
                                            
-                                           
+  _    _ ______          _____  ______ _____  
+ | |  | |  ____|   /\   |  __ \|  ____|  __ \ 
+ | |__| | |__     /  \  | |  | | |__  | |__) |
+ |  __  |  __|   / /\ \ | |  | |  __| |  _  / 
+ | |  | | |____ / ____ \| |__| | |____| | \ \ 
+ |_|  |_|______/_/    \_\_____/|______|_|  \_\
+                                              
+                                                                                      
 */
-/* général */
+/* general */
 nav, header{
     background-color:var(--bg-primary);
     color:#fff;
@@ -156,18 +137,6 @@ header p{
 }
 header p i + i{
     margin-left:20px;
-}
-div.content{
-    position: fixed;
-    top:var(--navbar-height);
-    height: 100%;
-    width:auto;
-    display: flex;
-    flex-direction: row;
-}
-div.content > nav, div.content > aside{
-    display: flex;
-    flex-direction: row;
 }
 /* nav */
 nav{
@@ -257,7 +226,7 @@ aside.content .col2 .card .disabled{
     font-size:small;
     color:gray;
 }
-/* gallerie */
+/* gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -265,6 +234,10 @@ aside.content .col2 .card .disabled{
     grid-gap: 8px; 
 }
 figure span.titre{
+    position: relative;
+    top: -19px;
+    left:0px;
+    right: 0px;
     padding:5px;
     background-color:rgba(0, 0, 0, 0.75);
     color:#fff;
@@ -281,47 +254,48 @@ figure span.titre{
 .gallery__img:hover{
     padding-top:0px;
 }
-.gallery__item--1 {
+.gallery .item1 {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
 }
   
-.gallery__item--2 {
+.gallery .item2 {
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 3;
 }
   
-.gallery__item--3 {
+.gallery .item3 {
     grid-column-start: 5;
     grid-column-end: 9;
     grid-row-start: 1;
     grid-row-end: 6;
 }
   
-.gallery__item--4 {
+.gallery .item4 {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 6;
 }
   
-.gallery__item--5 {
+.gallery .item5 {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 6;
     grid-row-end: 9;
 }
   
-.gallery__item--6 {
+.gallery .item6 {
     grid-column-start: 5;
     grid-column-end: 9;
     grid-row-start: 6;
     grid-row-end: 9;
 }
+
 @media all and (max-width:1036px) {
     div.content > aside{
         display: block;
@@ -338,14 +312,4 @@ figure span.titre{
         margin-top: 5px;
     }
 }
-/*
-  ______ ____   ____ _______ ______ _____  
- |  ____/ __ \ / __ \__   __|  ____|  __ \ 
- | |__ | |  | | |  | | | |  | |__  | |__) |
- |  __|| |  | | |  | | | |  |  __| |  _  / 
- | |   | |__| | |__| | | |  | |____| | \ \ 
- |_|    \____/ \____/  |_|  |______|_|  \_\
-                                           
-                                           
-*/
 
