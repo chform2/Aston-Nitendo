@@ -297,11 +297,11 @@ figure span.titre{
 }
 
 @media all and (max-width:1036px) {
-    div.content > aside{
-        display: block;
+    aside.content{
+        display: block !important;
     }
     aside.content .col1, aside.content .col2{
-        width:100%;
+        width:100% !important;
         height: 100%;
     }
     .gallery {
