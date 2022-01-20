@@ -235,12 +235,28 @@ aside.content .col2 .card .disabled{
 }
 figure span.titre{
     position: relative;
-    top: -19px;
+    bottom: 27px;
     left:0px;
     right: 0px;
-    padding:5px;
+    width:100%;
     background-color:rgba(0, 0, 0, 0.75);
     color:#fff;
+    display: table;
+    padding: 5px 0px 0px 0px;
+    margin-right: 5px;
+    font-size:12px;
+    height:22px;
+    text-transform: uppercase;
+    text-align: center;
+}
+figure span.titre::before{
+    content: '\00a0 ';
+}
+figure a, figure a:hover, figure a:visited, figure a:focus{
+    text-decoration: none;
+    font-weight: bold;
+    color:#fff;
+    text-transform: uppercase;
 }
 .gallery__img {
     width: 100%;
